@@ -3,6 +3,8 @@ using UnityEngine;
 public class LevelChangeTrigger : MonoBehaviour
 {
     public LevelManager levelManager;
+    public GameObject levelToActivate;
+    public Transform spawnLocation;
 
     private void Start()
     {
@@ -14,7 +16,7 @@ public class LevelChangeTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Entered");
-            levelManager.LevelChange();
+            levelManager.LevelChange(levelToActivate, spawnLocation);
         }
     }
 
